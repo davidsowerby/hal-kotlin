@@ -1,0 +1,32 @@
+{
+  "_links": {
+    "self": {
+      "href": "/products/3"
+    }
+  },
+  "_embedded": {
+    "manufacturer": {
+      "_links": {
+        "self": {
+          "href": "/manufacturers/328764"
+        },
+        "homepage": {
+          "href": "http://hoverdonkey.com"
+        }
+      },
+      "_embedded": {
+        "review": {
+          "rating": 5,
+          "comments": "pretty cool",
+          "_links": {
+            "self": {
+              "href": ""
+            }
+          },
+          "_embedded": {}
+        }
+      },
+      "name": "Manufacturer Inc."
+    }
+  }
+}

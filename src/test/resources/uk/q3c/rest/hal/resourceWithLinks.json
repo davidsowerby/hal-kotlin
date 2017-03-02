@@ -1,0 +1,19 @@
+{
+  "_links": {
+    "self": {
+      "href": ""
+    },
+    "oldOrders": [
+      {
+        "href": "/orders/2"
+      },
+      {
+        "href": "/orders/3"
+      }
+    ],
+    "latest": {
+      "href": "/orders/1",
+      "title": "latest order"
+    }
+  }
+}

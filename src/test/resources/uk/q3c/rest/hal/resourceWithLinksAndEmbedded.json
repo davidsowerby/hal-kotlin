@@ -1,0 +1,20 @@
+{
+  "_links": {
+    "self": {
+      "href": "/products/3"
+    }
+  },
+  "_embedded": {
+    "manufacturer": {
+      "_links": {
+        "self": {
+          "href": "/manufacturers/328764"
+        },
+        "homepage": {
+          "href": "http://hoverdonkey.com"
+        }
+      },
+      "name": "Manufacturer Inc."
+    }
+  }
+}
