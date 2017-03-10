@@ -30,7 +30,7 @@ open class GenericResource<T> @JsonCreator constructor() {
         return map[name]
     }
 
-    // "any getter" needed for serialization
+    // "any getter" needed for serialization;  not ideal as this exposes the property
     @JsonAnyGetter
     protected fun members(): Map<String, T> {
         return map

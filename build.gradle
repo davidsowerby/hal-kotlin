@@ -35,7 +35,7 @@ apply plugin: "kotlin"
 
 group = 'uk.q3c.rest'
 //ext.baseVersion = '0.0.1'
-version = '0.5.0.11'
+version = '0.5.1.12'
 ext.slf4jVersion = '1.7.6'
 
 
@@ -75,6 +75,9 @@ dependencies {
 
     // Testing JSON
     testCompile 'org.skyscreamer:jsonassert:1.4.0'
+
+    // utility
+    compile 'com.google.guava:guava:21.0'
 
 
 }

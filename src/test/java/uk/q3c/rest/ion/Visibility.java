@@ -28,4 +28,5 @@ public class Visibility {
     public void doit() {
         halResource.self("/somewhere");
     }
+
 }

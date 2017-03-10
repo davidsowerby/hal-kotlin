@@ -1,0 +1,19 @@
+{
+  "self": {
+    "href": ""
+  },
+  "single": {
+    "href": "a"
+  },
+  "another single": {
+    "href": "d"
+  },
+  "multi": [
+    {
+      "href": "b"
+    },
+    {
+      "href": "c"
+    }
+  ]
+}

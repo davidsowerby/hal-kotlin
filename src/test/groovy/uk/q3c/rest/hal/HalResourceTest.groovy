@@ -38,6 +38,11 @@ class HalResourceTest extends JsonTest {
 
         then:
         asExpectedFromFile("emptyResource.json")
+
+        then:
+        halResource.href() == ""
+
+
         then: "round tripped"
         validateRoundTrip(HalResource)
     }
@@ -49,8 +54,12 @@ class HalResourceTest extends JsonTest {
         then:
         asExpectedFromFile("resourceWithSelf.json")
 
+        then:
+        halResource.href() == "/users/1"
+
         then: "round tripped"
         validateRoundTrip(HalResource)
+
     }
 
     def "additional and multiple links"() {
@@ -70,6 +79,13 @@ class HalResourceTest extends JsonTest {
 
         then: "round tripped"
         validateRoundTrip(HalResource)
+
+        then:
+        halResource.hasLink("latest")
+        halResource.link("latest").href == "/orders/1"
+        halResource.hasLinks("oldOrders")
+        halResource.links("oldOrders").get(0).href == "/orders/2"
+        halResource.links("oldOrders").get(1).href == "/orders/3"
     }
 
     def "embedded"() {

@@ -28,7 +28,8 @@ abstract class JsonTest extends Specification {
 
     final String href = "/users/1"
 
-    GenericResource resource
+    Object resource
+    Object resource2
     HalMapper objectMapper
     StringWriter sw
 
@@ -74,11 +75,19 @@ abstract class JsonTest extends Specification {
 
     }
 
+    /**
+     * Writes the resource to JSON, then reads it back into resource2.  Note that this only tests writing and reading JSON,
+     * HalResource has no way of reconstructing objects held as values in the map
+     *
+     * @param resourceClass
+     * @return
+     */
     protected <T> boolean validateRoundTrip(Class<T> resourceClass) {
         objectMapper.writeValue(sw, resource)
         T result = objectMapper.readValue(sw.toString(), T)
         StringWriter sw2 = new StringWriter()
         objectMapper.writeValue(sw2, result)
+        resource2 = result
         println "\nRETURNED >>>>"
         println sw2.toString()
         JSONAssert.assertEquals(sw.toString(), sw2.toString(), true)

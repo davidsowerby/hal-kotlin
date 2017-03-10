@@ -10,3 +10,11 @@ There is no Functional Test yet.
 # Language
 
 Source is in [Kotlin](https://kotlinlang.org/), library is a standard Java jar
+
+# Usage
+
+## Java
+
+
+
+## Kotlin

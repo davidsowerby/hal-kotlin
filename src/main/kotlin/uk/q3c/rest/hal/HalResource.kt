@@ -36,6 +36,10 @@ open class HalResource @JsonCreator constructor(
         return _links.self
     }
 
+    fun href(): String {
+        return _links.self.href
+    }
+
     /**
      * Adds a link
      */
@@ -52,5 +56,21 @@ open class HalResource @JsonCreator constructor(
     fun embed(propertyName: String, resource: HalResource): HalResource {
         _embedded.put(propertyName, resource)
         return this
+    }
+
+    fun hasLink(propertyName: String): Boolean {
+        return _links.hasLink(propertyName)
+    }
+
+    fun link(propertyName: String): HalLink? {
+        return _links.link(propertyName)
+    }
+
+    fun links(propertyName: String): List<HalLink> {
+        return _links.links(propertyName)
+    }
+
+    fun hasLinks(propertyName: String): Boolean {
+        return _links.hasLinks(propertyName)
     }
 }
