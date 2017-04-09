@@ -15,7 +15,7 @@
 
 //noinspection GrPackage
 buildscript {
-    ext.kotlin_version = '1.1.0'
+    ext.kotlin_version = '1.1.1'
     repositories {
         mavenLocal()
         jcenter()
@@ -35,8 +35,9 @@ apply plugin: "kotlin"
 
 group = 'uk.q3c.rest'
 //ext.baseVersion = '0.0.1'
-version = '0.5.1.12'
+version = '0.5.2.13'
 ext.slf4jVersion = '1.7.6'
+ext.jacksonVersion = '2.8.6'
 
 
 task wrapper(type: Wrapper) {
@@ -58,6 +59,7 @@ dependencies {
 
     // kotlin
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 
     //logging
     compile 'org.slf4j:slf4j-api:' + slf4jVersion
@@ -65,9 +67,12 @@ dependencies {
     compile 'ch.qos.logback:logback-core:1.1.2'
 
     //REST service
-    compile 'com.fasterxml.jackson.core:jackson-core:2.8.6'
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.8.6'
-    compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.8.6"
+    compile "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
+    compile "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+    compile "com.fasterxml.jackson.module:jackson-module-kotlin:${jacksonVersion}"
+    compile "com.fasterxml.jackson.module:jackson-module-parameter-names:${jacksonVersion}"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:${jacksonVersion}"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jacksonVersion}"
 
     // Testing
     testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
