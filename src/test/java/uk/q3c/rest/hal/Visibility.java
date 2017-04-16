@@ -13,25 +13,18 @@
  *
  */
 
-package uk.q3c.rest.hal
-
-import spock.lang.Specification
+package uk.q3c.rest.hal;
 
 /**
- * Functional test against draft specification: http://ionwg.org/draft-ion.html Version Draft-Ionwg-Ion-01
- * *
- *
- * Created by David Sowerby on 22 Feb 2017
+ * Created by David Sowerby on 06 Feb 2017
  */
-class FunctionalSpecification_Specific extends Specification {
+public class Visibility {
 
 
-    HalMapper mapper
-    String href1 = "/users1"
+    private final HalResource halResource = new HalResource();
 
-    def setup() {
-        mapper = new HalMapper()
+    public void doit() {
+        halResource.self("/somewhere");
     }
-
 
 }

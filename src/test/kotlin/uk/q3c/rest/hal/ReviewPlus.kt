@@ -13,20 +13,13 @@
  *
  */
 
-package uk.q3c.rest.ion;
+package uk.q3c.rest.hal
 
-import uk.q3c.rest.hal.HalResource;
+import com.fasterxml.jackson.annotation.JsonCreator
+import java.time.OffsetDateTime
+import java.util.*
 
 /**
- * Created by David Sowerby on 06 Feb 2017
+ * Created by David Sowerby on 01 Mar 2017
  */
-public class Visibility {
-
-
-    private final HalResource halResource = new HalResource();
-
-    public void doit() {
-        halResource.self("/somewhere");
-    }
-
-}
+class ReviewPlus @JsonCreator constructor(var rating: Int, var comments: String, var date: OffsetDateTime, var optional: Optional<Int>) : HalResource()

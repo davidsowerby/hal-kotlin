@@ -13,10 +13,9 @@
  *
  */
 
-package uk.q3c.ion.rest
+package uk.q3c.rest.hal
 
 import com.fasterxml.jackson.annotation.JsonCreator
-import uk.q3c.rest.hal.HalResource
 
 /**
  * Created by David Sowerby on 01 Mar 2017

@@ -17,6 +17,8 @@ package uk.q3c.rest.hal
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.module.SimpleModule
+import com.fasterxml.jackson.datatype.jdk8.Jdk8Module
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 
 /**
@@ -28,6 +30,8 @@ class HalMapper : ObjectMapper() {
     init {
         registerModule(HalModule())
         registerModule(KotlinModule())
+        registerModule(JavaTimeModule())
+        registerModule(Jdk8Module())
     }
 }
 

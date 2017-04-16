@@ -35,7 +35,7 @@ apply plugin: "kotlin"
 
 group = 'uk.q3c.rest'
 //ext.baseVersion = '0.0.1'
-version = '0.5.2.13'
+version = '0.5.2.14'
 ext.slf4jVersion = '1.7.6'
 ext.jacksonVersion = '2.8.6'
 

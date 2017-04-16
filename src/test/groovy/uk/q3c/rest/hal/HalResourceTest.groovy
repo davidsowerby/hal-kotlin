@@ -16,7 +16,8 @@
 package uk.q3c.rest.hal
 
 import com.google.common.collect.ImmutableList
-import uk.q3c.ion.rest.Review
+
+import java.time.OffsetDateTime
 
 /**
  * Created by David Sowerby on 01 Mar 2017
@@ -116,7 +117,23 @@ class HalResourceTest extends JsonTest {
 
         then: "round tripped"
         validateRoundTrip(HalResource)
+    }
 
+    def "round trip with additional properties"() {
+        given:
+        ReviewPlus reviewPlus = new ReviewPlus(3, "wicked", OffsetDateTime.now(), Optional.of(33))
+        StringWriter sw = new StringWriter()
+        HalMapper halMapper = new HalMapper()
+
+        when:
+        halMapper.writeValue(sw, reviewPlus)
+        ReviewPlus result = halMapper.readValue(sw.toString(), ReviewPlus.class)
+
+        then:
+        result.optional.get() == 33
+        result.comments == "wicked"
+        result.rating == 3
+        result.date.isEqual(reviewPlus.date)
 
     }
 }
