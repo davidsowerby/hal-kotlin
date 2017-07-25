@@ -16,6 +16,8 @@
 package uk.q3c.rest.hal
 
 import com.google.common.collect.ImmutableList
+import uk.q3c.rest.hal.test.Review
+import uk.q3c.rest.hal.test.ReviewPlus
 
 import java.time.OffsetDateTime
 

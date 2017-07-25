@@ -13,9 +13,10 @@
  *
  */
 
-package uk.q3c.rest.hal
+package uk.q3c.rest.hal.test
 
 import com.fasterxml.jackson.annotation.JsonCreator
+import uk.q3c.rest.hal.HalResource
 import java.time.OffsetDateTime
 import java.util.*
 
